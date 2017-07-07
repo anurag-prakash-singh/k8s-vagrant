@@ -95,5 +95,6 @@ Vagrant.configure("2") do |config|
     echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list
     apt-get update
     apt-get install -y kubelet kubeadm kubernetes-cni
+    echo "alias kubectl='sudo kubectl --kubeconfig /etc/kubernetes/admin.conf'" >> /home/ubuntu/.bashrc
   SHELL
 end
